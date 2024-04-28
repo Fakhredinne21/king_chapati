@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
-@Table( name = "user")
+@MappedSuperclass
+//@Table( name = "user")
 @Getter
 @Setter
 @ToString

@@ -4,14 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.io.Serializable;
-import java.util.Set;
 @Entity
-@Table( name = "DelieverySociety")
+@Table( name = "Delivery_society")
 @Getter
 @Setter
 @ToString
-public class Delievery_Society {
+public class DeliverySociety {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name="id_soc")
