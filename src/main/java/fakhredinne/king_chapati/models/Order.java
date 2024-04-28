@@ -25,5 +25,14 @@ public class Order {
     @OneToMany(cascade = CascadeType.ALL,mappedBy="order")
     private Set<OrderItem> order_items;
 
+    @ManyToOne
+    Restaurant restau;
+
+    @ManyToOne
+    Client client;
+
+    @ManyToOne
+    DeliveryAgent delivAgent;
+
 
 }
