@@ -11,7 +11,8 @@ import java.util.Set;
 @Table(name = "Restaurant")
 public class Restaurant extends User{
 
-
+@ManyToOne
+Subscription sub;
     @OneToMany(cascade = CascadeType.ALL,mappedBy="restaurant")
     private Set<Order> orders;
 
