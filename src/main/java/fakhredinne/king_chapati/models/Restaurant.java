@@ -5,10 +5,14 @@ import jakarta.persistence.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "Restaurant")
 public class Restaurant extends User{
 
-    @ManyToOne
-    Subscription sub;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy="resturant")
+    private Set<Order> orders;
+
 }
