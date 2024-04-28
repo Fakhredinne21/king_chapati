@@ -7,7 +7,7 @@ import lombok.ToString;
 import java.io.Serializable;
 import java.util.Set;
 @Entity
-@Table( name = "Delievery_Society")
+@Table( name = "DelieverySociety")
 @Getter
 @Setter
 @ToString
