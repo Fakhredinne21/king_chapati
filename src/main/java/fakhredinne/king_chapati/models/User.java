@@ -4,14 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.io.Serializable;
-import java.util.Set;
 @Entity
-@Table( name = "user")
+@Table( name = "User")
 @Getter
 @Setter
 @ToString
-public class user {
+public class User {
 
     private static final long serialVersionUID = 1L;
     @Id

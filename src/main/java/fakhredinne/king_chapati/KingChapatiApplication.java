@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class KingChapatiApplication {
 
 	public static void main(String[] args) {SpringApplication.run(KingChapatiApplication.class, args);
-		System.out.println("It work ya chaima");
+		System.out.println("It workS ya chaima");
 	}
 
 }
