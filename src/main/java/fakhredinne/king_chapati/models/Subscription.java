@@ -18,5 +18,7 @@ public class Subscription {
     private String name,decription;
     private int price;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sub")
+    private Set<Restaurant> restaurants;
 
 }

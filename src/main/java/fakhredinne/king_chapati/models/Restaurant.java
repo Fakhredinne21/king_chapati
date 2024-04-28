@@ -8,4 +8,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Restaurant")
 public class Restaurant extends User{
+
+    @ManyToOne
+    Subscription sub;
 }

@@ -10,5 +10,5 @@ import jakarta.persistence.Table;
 public class DeliveryAgent extends User{
     private String full_name;
     @ManyToOne
-    private DeliverySociety deliv_soc;
+    DeliverySociety deliv_soc;
 }

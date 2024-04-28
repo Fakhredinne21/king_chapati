@@ -18,4 +18,6 @@ public class Category {
     private int id_cat;
     private String name;
 
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "cat")
+    private Set<Meal> meals;
 }
