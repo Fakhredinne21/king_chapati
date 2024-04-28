@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table( name = "orders")
@@ -21,7 +22,8 @@ public class Order {
     private String status,destination;
     private LocalDate order_date;
     private int total_price;
-
+    @OneToMany(cascade = CascadeType.ALL,mappedBy="order")
+    private Set<OrderItem> order_items;
 
 
 }
