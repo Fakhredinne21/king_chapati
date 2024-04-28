@@ -14,6 +14,7 @@ public class Meal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_meal")
+    private Long id_meal;
     private String name;
     private String description;
     private int price;

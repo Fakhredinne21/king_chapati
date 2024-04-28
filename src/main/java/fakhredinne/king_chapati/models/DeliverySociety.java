@@ -18,7 +18,6 @@ public class DeliverySociety {
     private Long id_soc;
     private String name,email;
     private int phone_number;
-
     @OneToMany(cascade = CascadeType.ALL,mappedBy="deliv_soc")
     private Set<DeliveryAgent> agents;
 
