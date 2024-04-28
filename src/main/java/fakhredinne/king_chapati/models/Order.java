@@ -26,7 +26,7 @@ public class Order {
     private Set<OrderItem> order_items;
 
     @ManyToOne
-    Restaurant restau;
+    Restaurant restaurant;
 
     @ManyToOne
     Client client;

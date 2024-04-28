@@ -12,7 +12,7 @@ import java.util.Set;
 public class Restaurant extends User{
 
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy="resturant")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy="restaurant")
     private Set<Order> orders;
 
 }
