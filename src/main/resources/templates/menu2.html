@@ -162,11 +162,12 @@
 
     <div class="filters-content">
       <div class="row grid">
+        <div th:each="meal : ${listMeals}" >
         <div class="col-sm-6 col-lg-4 all pizza">
-          <div class="box" th:each="meal : ${listMeals}">
+          <div class="box" >
             <div>
               <div class="img-box">
-                <img src="http://localhost:8080/images/f1.png" alt="">
+                <img th:src="${meal.getImage()}" alt="Image">
               </div>
               <div class="detail-box">
                 <h5   th:text="${meal.getName()}" >
@@ -176,8 +177,8 @@
 
                 </p>
                 <div class="options">
-                  <h6>
-                    $20
+                  <h6  th:text="${meal.getPrice()}">
+
                   </h6>
                   <a href="">
                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -238,6 +239,9 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    </div>
 
 
 </section>
