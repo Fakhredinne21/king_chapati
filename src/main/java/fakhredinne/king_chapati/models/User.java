@@ -21,6 +21,8 @@ public class User {
     private String full_name;
     private String email;
     private int phone_number;
+    private String profile_image;
+
 
 
 

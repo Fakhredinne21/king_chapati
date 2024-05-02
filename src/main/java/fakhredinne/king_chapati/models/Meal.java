@@ -18,7 +18,7 @@ public class Meal {
     private String name;
     private String description;
     private int price;
-
+    private String image;
     @ManyToOne
     Category cat;
 }

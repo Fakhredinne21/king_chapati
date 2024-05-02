@@ -16,4 +16,5 @@ Subscription sub;
     @OneToMany(cascade = CascadeType.ALL,mappedBy="restaurant")
     private Set<Order> orders;
 
+
 }
