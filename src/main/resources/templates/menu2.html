@@ -164,7 +164,7 @@
       <div class="row grid">
         <div th:each="meal : ${listMeals}" >
         <div class="col-sm-6 col-lg-4 all pizza">
-          <div class="box" >
+          <div class="box" th:if="${meal.isState()}">
             <div>
               <div class="img-box">
                 <img th:src="${meal.getImage()}" alt="Image">
