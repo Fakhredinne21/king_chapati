@@ -7,16 +7,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class MealService implements IMealService{
+public class MealService {
 
     @Autowired
     MealRepository mealRepository;
-
-
-    @Override
     public List<Meal> findAll() {
         return mealRepository.findAll();
     }
+
 
 
 }

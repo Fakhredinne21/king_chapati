@@ -13,6 +13,16 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class mainController {
+    /*
+   form -> demandTo_add_meal
+
+               ___   ___
+              ||-^-|-^-||
+               || -&- ||
+             \\___---___//
+
+   table_admin -> approv lel demand
+   */
     @RequestMapping(value = "/test",method = RequestMethod.GET)
     public String index(){
         return "error";

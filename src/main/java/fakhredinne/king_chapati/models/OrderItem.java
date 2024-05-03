@@ -16,6 +16,7 @@ public class OrderItem {
     @Column(name="id_item")
     private int id_item;
     private int quantity;
+
     @ManyToOne
     Meal meal;
     @ManyToOne
