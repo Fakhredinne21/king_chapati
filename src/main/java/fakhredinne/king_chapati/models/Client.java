@@ -13,4 +13,7 @@ import java.util.Set;
 public class Client extends User{
     @OneToMany(cascade = CascadeType.ALL,mappedBy="client")
     private Set<Order> orders;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy="client")
+    private Set<Conversation>conversations ;
+
 }
