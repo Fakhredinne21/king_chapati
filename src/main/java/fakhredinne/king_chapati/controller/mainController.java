@@ -13,6 +13,10 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class mainController {
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    public String index(){
+        return "ClientSide/index";
+    }
     /*
    form -> demandTo_add_meal
 
@@ -23,15 +27,20 @@ public class mainController {
 
    table_admin -> approv lel demand
    */
-    @RequestMapping(value = "/test",method = RequestMethod.GET)
-    public String index(){
-        return "error";
-    }
+
     @RequestMapping(value = "/meals", method = RequestMethod.GET)
     public String viewMealPage(Model model)
     {
         return "redirect:/meal/menu";
 
     }
+
+    @RequestMapping(value = "/convers", method = RequestMethod.GET)
+    public String viewConvers(Model model)
+    {
+        return "redirect:/convers/conver";
+
+    }
+
 
 }

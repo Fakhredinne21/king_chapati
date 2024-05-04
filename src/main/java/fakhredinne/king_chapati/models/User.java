@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.net.PasswordAuthentication;
+import java.util.Set;
+
 @MappedSuperclass
 //@Table( name = "user")
 @Getter
@@ -17,7 +20,7 @@ public class User {
     @Column(name="id_user")
     private Long id_user;
     private Long username;
-    private Long password;
+    private String password;
     private String full_name;
     private String email;
     private int phone_number;

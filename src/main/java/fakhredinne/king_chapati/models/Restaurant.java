@@ -15,6 +15,7 @@ public class Restaurant extends User{
 Subscription sub;
     @OneToMany(cascade = CascadeType.ALL,mappedBy="restaurant")
     private Set<Order> orders;
-
+    @OneToMany(cascade = CascadeType.ALL,mappedBy="restaurant")
+    private Set<Conversation> conversations;
 
 }
