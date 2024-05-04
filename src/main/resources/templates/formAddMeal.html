@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Meal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <h3 class="h4 mb-4">Add Meal</h3>
+
+    <form th:action="@{'/restaurant/addMeal'}" th:object="${meal}" method="post">
+        <input type="hidden" th:field="*{restaurant.id_user}" th:value="${restaurantId}" />
+        <input type="text" th:field="*{name}"  class="form-control mb-4 col-4" placeholder="Meal Name"/><br/>
+        <input type="text" th:field="*{description}"  class="form-control mb-4 col-4" placeholder="Description"/><br/>
+        <input type="number" th:field="*{price}"  class="form-control mb-4 col-4" placeholder="Price"/><br/>
+        <input type="text" th:field="*{image}"  class="form-control mb-4 col-4" placeholder="Image URL"/><br/>
+        <button type="submit" class="btn btn-info col-2">Add Meal</button>
+    </form>
+</div>
+</body>
+</html>

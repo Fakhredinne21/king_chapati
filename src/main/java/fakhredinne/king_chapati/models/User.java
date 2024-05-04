@@ -4,9 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.net.PasswordAuthentication;
-import java.util.Set;
-
 @MappedSuperclass
 //@Table( name = "user")
 @Getter
@@ -19,7 +16,7 @@ public class User {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name="id_user")
     private Long id_user;
-    private Long username;
+    private String username;
     private String password;
     private String full_name;
     private String email;
