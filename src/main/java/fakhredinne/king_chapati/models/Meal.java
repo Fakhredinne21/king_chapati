@@ -22,4 +22,7 @@ public class Meal {
     private boolean state;
     @ManyToOne
     Category cat;
+
+    @ManyToOne
+    Restaurant restaurant;
 }

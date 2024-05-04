@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.ArrayList;
 import java.util.List;
 @Controller
 @RequestMapping("/")
@@ -23,15 +24,13 @@ public class mainController {
 
    table_admin -> approv lel demand
    */
-    @RequestMapping(value = "/test",method = RequestMethod.GET)
-    public String index(){
-        return "error";
-    }
+
     @RequestMapping(value = "/meals", method = RequestMethod.GET)
     public String viewMealPage(Model model)
     {
         return "redirect:/meal/menu";
 
     }
+
 
 }
