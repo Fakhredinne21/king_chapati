@@ -17,18 +17,24 @@ public class RestaurantService {
     private RestaurantRepository restaurantRepository;
     @Autowired
     private MealRepository mealRepository;
+    public Restaurant findRestaurant(Long id){
+        return restaurantRepository.findRestaurantsByIdresturant(id);
+
+    }
     public List<Restaurant> findAll() {
         return restaurantRepository.findAll();
     }
  /*   public List<Restaurant> findByLocation(String Location){
         return restaurantRepository.getRestaurantsByLocation(Location);
     }*/
-    public void addMeal(Long id,Meal meal){
-         meal.setRestaurant(findRestaurant(id));
-         mealRepository.save(meal);
+    public List<Meal>getMeal(Long id){
+        return mealRepository.getByRestaurant(findRestaurant(id));
     }
-    public Restaurant findRestaurant(Long id){
-        return restaurantRepository.findRestaurantsByIdresturant(id);
+    public void addMeal(Meal meal){
+        mealRepository.save(meal);
+    }
+    public void deleteMeal(Meal meal){
+        mealRepository.delete(meal);
 
     }
 
