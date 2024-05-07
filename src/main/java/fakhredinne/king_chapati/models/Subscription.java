@@ -1,26 +1,23 @@
 package fakhredinne.king_chapati.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Set;
 
 @Entity
-@Table( name = "Subscription")
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString
 public class Subscription {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_sub")
-    private int id_sub;
+    @GeneratedValue
+    private Integer id_sub;
     private String name,decription;
     private int price;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sub")
+     @OneToMany(mappedBy = "sub")
     private Set<Restaurant> restaurants;
 
 }

@@ -1,38 +1,49 @@
 package fakhredinne.king_chapati.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
-
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table( name = "orders")
 @Getter
 @Setter
 @ToString
+@Table(name = "Orders")
+
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_order")
-    private int id_order;
+    @GeneratedValue
+    private Integer id_order;
     private String status,destination;
-    private LocalDate order_date;
+    @Column(
+            updatable = false ,nullable = false
+
+    )
+    private LocalDateTime orderDate;
     private int total_price;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy="order")
+    @OneToMany(mappedBy="order")
     private Set<OrderItem> order_items;
 
     @ManyToOne
+            @JoinColumn(name = "restaurant")
     Restaurant restaurant;
 
     @ManyToOne
+    @JoinColumn(name = "Client")
     Client client;
 
     @ManyToOne
+    @JoinColumn(name = "delivAgent")
     DeliveryAgent delivAgent;
+
+
+
 
 
 }

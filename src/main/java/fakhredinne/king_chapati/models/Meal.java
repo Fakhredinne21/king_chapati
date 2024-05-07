@@ -1,19 +1,20 @@
 package fakhredinne.king_chapati.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
+import java.util.List;
+
+@Builder
 @Entity
-@Table( name = "Meal")
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Meal {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_meal")
+    @GeneratedValue
     private Long id_meal;
     private String name;
     private String description;
@@ -21,8 +22,12 @@ public class Meal {
     private String image;
     private boolean state;
     @ManyToOne
+    @JoinColumn(name = "category")
     Category cat;
 
     @ManyToOne
+    @JoinColumn(name = "retaurant_id")
     Restaurant restaurant;
+
+
 }

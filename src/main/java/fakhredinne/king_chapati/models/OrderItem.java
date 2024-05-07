@@ -12,14 +12,14 @@ import lombok.ToString;
 @ToString
 public class OrderItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_item")
-    private int id_item;
+    @GeneratedValue
+    private Integer id_item;
     private int quantity;
-
     @ManyToOne
+            @JoinColumn(name = "Meal_id")
     Meal meal;
     @ManyToOne
+    @JoinColumn(name = "Order_id")
     Order order;
 
 }

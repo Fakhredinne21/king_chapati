@@ -2,15 +2,24 @@ package fakhredinne.king_chapati.models;
 
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.Set;
 
+@Getter
+@Setter
+@ToString
 @Entity
-@Table(name = "DeliveryAgent")
+@AllArgsConstructor
+@NoArgsConstructor
 public class DeliveryAgent extends User{
+    @Id
+    @GeneratedValue
+    private Long idagent;
     private String full_name;
     @ManyToOne
-    DeliverySociety deliv_soc;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy="delivAgent")
+    @JoinColumn(name = "Company")
+    DeliveryCompany deliv_comp;
+    @OneToMany(mappedBy="delivAgent")
     private Set<Order> orders;
 }

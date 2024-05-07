@@ -4,23 +4,31 @@ import jakarta.persistence.*;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
-
+@Builder
 @Entity
-@Table(name = "Restaurant")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class Restaurant extends User{
-
-@ManyToOne
-Subscription sub;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy="restaurant")
+    @Id
+    @GeneratedValue
+    private Long idresturant;
+    private String Location;
+    @ManyToOne
+    @JoinColumn(name = "Subscription")
+    Subscription sub;
+    @OneToMany(mappedBy="restaurant")
     private Set<Order> orders;
-
     @Getter
-    @OneToMany(cascade = CascadeType.ALL,mappedBy="restaurant")
-    private Set<Meal> meals;
+    @OneToMany(mappedBy="restaurant")
+    private List<Meal> meals;
 
 
 }

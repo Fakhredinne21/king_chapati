@@ -4,16 +4,23 @@ import jakarta.persistence.*;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.*;
 
 import java.util.Set;
-
+@Getter
+@Setter
+@ToString
 @Entity
 @Table( name = "Client")
-
-public class Client extends User{
-    @OneToMany(cascade = CascadeType.ALL,mappedBy="client")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class Client extends User {
+    @Id
+    @GeneratedValue
+    private Long idclient;
+    @OneToMany(mappedBy="client")
     private Set<Order> orders;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy="client")
-    private Set<Conversation>conversations ;
+
 
 }
