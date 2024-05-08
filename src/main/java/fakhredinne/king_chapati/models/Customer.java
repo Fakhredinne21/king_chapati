@@ -11,15 +11,14 @@ import java.util.Set;
 @Setter
 @ToString
 @Entity
-@Table( name = "Client")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Client extends User {
+public class Customer extends User {
     @Id
     @GeneratedValue
-    private Long idclient;
-    @OneToMany(mappedBy="client")
+    private Long idcustomer;
+    @OneToMany(mappedBy="customer")
     private Set<Order> orders;
 
 
