@@ -25,7 +25,7 @@ public class JwtService {
     }
     //Extract Many Claims
   private Claims extractAllClaims(String token){
-        //Extratc all claims of that specific token
+        //Extract all claims of that specific token
         return Jwts.parser().
                 setSigningKey(getSignInkey())
                 .parseClaimsJws(token)
