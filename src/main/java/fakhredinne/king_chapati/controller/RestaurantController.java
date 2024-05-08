@@ -1,4 +1,6 @@
 package fakhredinne.king_chapati.controller;
+
+
 import fakhredinne.king_chapati.models.Meal;
 import fakhredinne.king_chapati.services.RestaurantService;
 import fakhredinne.king_chapati.services.SubscriptionService;
@@ -14,6 +16,8 @@ public class RestaurantController {
     private RestaurantService restaurantService;
     @Autowired
     private SubscriptionService subService;
+
+
     @GetMapping("/addmealform/{restaurantId}")
     public String showAddMealForm(@PathVariable Long restaurantId, Model model){
         System.out.println(restaurantId);
@@ -33,7 +37,6 @@ public class RestaurantController {
     }
     @GetMapping("/subscriptions")
     public String seeSubs(){
-
         return ("DashboardCA/plans");
     }
     }
