@@ -18,7 +18,6 @@ public class RestaurantController {
     private SubscriptionService subService;
 
 
-
     @GetMapping("/addmealform/{restaurantId}")
     public String showAddMealForm(@PathVariable Long restaurantId, Model model){
         System.out.println(restaurantId);
@@ -36,11 +35,10 @@ public class RestaurantController {
         model.addAttribute("listMeals",restaurantService.getMeal(restaurantId));
         return ("menu");
     }
-    @GetMapping("/subscriptions") 
-    public String seeSubs(Model model){
-        model.addAttribute("listSub", subService.findAllSubscription() );
-        //String[] descriptions =
+    @GetMapping("/subscriptions")
+    public String seeSubs(){
 
-        return ("DashboardCA/plans");
+        return ("DashboardCA/plans"
+        );
     }
     }
