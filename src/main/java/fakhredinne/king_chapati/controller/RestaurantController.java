@@ -37,6 +37,8 @@ public class RestaurantController {
     }
     @GetMapping("/subscriptions")
     public String seeSubs(){
-        return ("DashboardCA/plans");
+
+        return ("DashboardCA/plans"
+        );
     }
     }
