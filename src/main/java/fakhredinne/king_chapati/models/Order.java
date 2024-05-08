@@ -23,15 +23,13 @@ public class Order {
     private String status,destination;
     @Column(
             updatable = false ,nullable = false
-
     )
     private LocalDateTime orderDate;
     private int total_price;
     @OneToMany(mappedBy="order")
     private Set<OrderItem> order_items;
-
     @ManyToOne
-            @JoinColumn(name = "restaurant")
+    @JoinColumn(name = "restaurant")
     Restaurant restaurant;
 
     @ManyToOne

@@ -10,8 +10,8 @@
 <div class="container">
     <h3 class="h4 mb-4">Add Meal</h3>
 
+
     <form th:action="@{'/restaurant/addMeal'}" th:object="${meal}" method="post">
-        <input type="hidden" th:field="*{restaurant}" th:value="${resto}" class="form-control mb-4 col-4" placeholder="Meal Name"/><br/>
         <input type="text" th:field="*{name}"  class="form-control mb-4 col-4" placeholder="Meal Name"/><br/>
         <input type="text" th:field="*{description}"  class="form-control mb-4 col-4" placeholder="Description"/><br/>
         <input type="number" th:field="*{price}"  class="form-control mb-4 col-4" placeholder="Price"/><br/>

@@ -14,6 +14,15 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class mainController {
+    @Autowired
+    MealService mealService;
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String main(Model model)
+    {
+        List<Meal> listMeals = mealService.findAll();
+        model.addAttribute("listMeals",listMeals);
+        return "index";
+    }
     /*
    form -> demandTo_add_meal
 
@@ -25,12 +34,16 @@ public class mainController {
    table_admin -> approv lel demand
    */
 
-    @RequestMapping(value = "/meals", method = RequestMethod.GET)
-    public String viewMealPage(Model model)
+    @RequestMapping(value = "/menu", method = RequestMethod.GET)
+    public String menu(Model model)
     {
-        return "redirect:/meal/menu";
-
+        List<Meal> listMeals = mealService.findAll();
+        model.addAttribute("listMeals",listMeals);
+        return "menu";
     }
+
+
+
 
 
 }

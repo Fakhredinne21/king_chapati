@@ -21,11 +21,12 @@ public class Meal {
     private int price;
     private String image;
     private boolean state;
+    private Long test_id;
     @ManyToOne
     @JoinColumn(name = "category")
     Category cat;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "retaurant_id")
     Restaurant restaurant;
 

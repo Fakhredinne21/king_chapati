@@ -14,7 +14,7 @@ import java.util.Set;
 public class Subscription {
     @Id
     @GeneratedValue
-    private Integer id_sub;
+    private Long id_sub;
     private String name,decription;
     private int price;
      @OneToMany(mappedBy = "sub")
