@@ -13,11 +13,9 @@ import java.util.Set;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+
 public class Customer extends User {
-    @Id
-    @GeneratedValue
-    private Long idcustomer;
+
     @OneToMany(mappedBy="customer")
     private Set<Order> orders;
 

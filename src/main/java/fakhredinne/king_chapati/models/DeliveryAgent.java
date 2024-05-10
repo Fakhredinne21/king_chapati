@@ -13,9 +13,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DeliveryAgent extends User{
-    @Id
-    @GeneratedValue
-    private Long idagent;
     private String full_name;
     @ManyToOne
     @JoinColumn(name = "Company")
