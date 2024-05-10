@@ -1,11 +1,11 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/kingChapati?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/kingChapati
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    hibernnate:
+    hibernate:
       ddl-auto: create
     show-sql: true
     properties:

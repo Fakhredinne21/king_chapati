@@ -9,7 +9,7 @@ import lombok.*;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-@Builder
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,9 +17,7 @@ import java.util.Set;
 @Setter
 @ToString
 public class Restaurant extends User{
-    @Id
-    @GeneratedValue
-    private Long idresturant;
+
     private String Location;
     @ManyToOne
     @JoinColumn(name = "Subscription")
