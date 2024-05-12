@@ -13,9 +13,9 @@ import java.util.Set;
 @ToString
 public class Subscription {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_sub;
-    private String name,decription;
+    private String name,description;
     private int price;
      @OneToMany(mappedBy = "sub")
     private Set<Restaurant> restaurants;

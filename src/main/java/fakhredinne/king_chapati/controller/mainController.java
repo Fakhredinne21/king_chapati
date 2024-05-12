@@ -17,6 +17,7 @@ public class mainController {
     @Autowired
     MealService mealService;
     @RequestMapping(value = "/", method = RequestMethod.GET)
+
     public String main(Model model)
     {
         List<Meal> listMeals = mealService.findAll();
