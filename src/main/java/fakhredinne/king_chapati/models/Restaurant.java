@@ -23,7 +23,7 @@ public class Restaurant extends User{
     @JoinColumn(name = "Subscription")
     Subscription sub;
     @OneToMany(mappedBy="restaurant")
-    private Set<Order> orders;
+    private Set<OrderItem> orders;
     @Getter
     @OneToMany(mappedBy="restaurant")
     private List<Meal> meals;

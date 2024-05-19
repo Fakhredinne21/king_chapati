@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Ready Bootstrap Dashboard</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="stylesheet" href="http://localhost:8080/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="http://localhost:8080/assets/css/ready.css">
+	<link rel="stylesheet" href="http://localhost:8080/assets/css/demo.css">
+	<style>::-webkit-scrollbar {
+		width: 8px;
+	}
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: #888;
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	} body{
+		  background: #ddd;
+		  min-height: 100vh;
+		  vertical-align: middle;
+		  display: flex;
+		  font-family: sans-serif;
+		  font-size: 0.8rem;
+		  font-weight: bold;
+	  }
+	.title{
+		margin-bottom: 5vh;
+	}
+	.card{
+		margin: auto;
+		max-width: 950px;
+		width: 90%;
+		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		border-radius: 1rem;
+		border: transparent;
+	}
+	@media(max-width:767px){
+		.card{
+			margin: 3vh auto;
+		}
+	}
+	.cart{
+		background-color: #fff;
+		padding: 4vh 5vh;
+		border-bottom-left-radius: 1rem;
+		border-top-left-radius: 1rem;
+	}
+	@media(max-width:767px){
+		.cart{
+			padding: 4vh;
+			border-bottom-left-radius: unset;
+			border-top-right-radius: 1rem;
+		}
+	}
+	.summary{
+		background-color: #ddd;
+		border-top-right-radius: 1rem;
+		border-bottom-right-radius: 1rem;
+		padding: 4vh;
+		color: rgb(65, 65, 65);
+	}
+	@media(max-width:767px){
+		.summary{
+			border-top-right-radius: unset;
+			border-bottom-left-radius: 1rem;
+		}
+	}
+	.summary .col-2{
+		padding: 0;
+	}
+	.summary .col-10
+	{
+		padding: 0;
+	}.row{
+		 margin: 0;
+	 }
+	.title b{
+		font-size: 1.5rem;
+	}
+	.main{
+		margin: 0;
+		padding: 2vh 0;
+		width: 100%;
+	}
+	.col-2, .col{
+		padding: 0 1vh;
+	}
+	a{
+		padding: 0 1vh;
+	}
+	.close{
+		margin-left: auto;
+		font-size: 0.7rem;
+	}
+	img{
+		width: 3.5rem;
+	}
+	.back-to-shop{
+		margin-top: 4.5rem;
+	}
+	h5{
+		margin-top: 4vh;
+	}
+	hr{
+		margin-top: 1.25rem;
+	}
+	form{
+		padding: 2vh 0;
+	}
+	select{
+		border: 1px solid rgba(0, 0, 0, 0.137);
+		padding: 1.5vh 1vh;
+		margin-bottom: 4vh;
+		outline: none;
+		width: 100%;
+		background-color: rgb(247, 247, 247);
+	}
+	input{
+		border: 1px solid rgba(0, 0, 0, 0.137);
+		padding: 1vh;
+		margin-bottom: 4vh;
+		outline: none;
+		width: 100%;
+		background-color: rgb(247, 247, 247);
+	}
+	input:focus::-webkit-input-placeholder
+	{
+		color:transparent;
+	}
+	.btn{
+		background-color: #000;
+		border-color: #000;
+		color: white;
+		width: 100%;
+		font-size: 0.7rem;
+		margin-top: 4vh;
+		padding: 1vh;
+		border-radius: 0;
+	}
+	.btn:focus{
+		box-shadow: none;
+		outline: none;
+		box-shadow: none;
+		color: white;
+		-webkit-box-shadow: none;
+		-webkit-user-select: none;
+		transition: none;
+	}
+	.btn:hover{
+		color: white;
+	}
+	a{
+		color: black;
+	}
+	a:hover{
+		color: black;
+		text-decoration: none;
+	}
+	#code{
+		background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253) , rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+		background-repeat: no-repeat;
+		background-position-x: 95%;
+		background-position-y: center;
+	}</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<div class="logo-header">
+				<a href="index.html" class="logo">
+					<img src="http://localhost:8080/images/logo.png" alt="" width="50px" >
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+			</div>
+			<nav class="navbar navbar-header navbar-expand-lg">
+				<div class="container-fluid">
+					
+
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-envelope"></i>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-bell"></i>
+								<span class="notification">3</span>
+							</a>
+							<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
+								<li>
+									<div class="dropdown-title">You have 4 new notification</div>
+								</li>
+								<li>
+									<div class="notif-center">
+										<a href="#">
+											<div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													New user registered
+												</span>
+												<span class="time">5 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Rahmad commented on Admin
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-img"> 
+												<img src="assets/img/profile2.jpg" alt="Img Profile">
+											</div>
+											<div class="notif-content">
+												<span class="block">
+													Reza send messages to you
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Farrah liked Admin
+												</span>
+												<span class="time">17 minutes ago</span> 
+											</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span >Hizrian</span></span> </a>
+							<ul class="dropdown-menu dropdown-user">
+								<li>
+									<div class="user-box">
+										<div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
+										<div class="u-text">
+											<h4>Hizrian</h4>
+											<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+										</div>
+									</li>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
+									<a class="dropdown-item" href="#"></i> My Balance</a>
+									<a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+									<div class="dropdown-divider"></div>
+								<form class="form-inline" th:action="@{/logout}" method="post">
+									<button type="submit" class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</button>
+								</form>
+								</ul>
+								<!-- /.dropdown-user -->
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="sidebar">
+				<div class="scrollbar-inner sidebar-wrapper">
+					<div class="user">
+						<div class="photo">
+							<img src="assets/img/profile.jpg">
+						</div>
+						<div class="info">
+							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									Hizrian
+									<span class="user-level">Administrator</span>
+									<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+
+							<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+								<ul class="nav">
+									<li>
+										<a href="#profile">
+											<span class="link-collapse">My Profile</span>
+										</a>
+									</li>
+									<li>
+										<a href="#edit">
+											<span class="link-collapse">Edit Profile</span>
+										</a>
+									</li>
+									<li>
+										<a href="#settings">
+											<span class="link-collapse">Settings</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav">
+						<li class="nav-item">
+							<a  th:href="@{/customer}">
+								<i class="la la-dashboard"></i>
+								<p>Dashboard</p>
+								<span class="badge badge-count">5</span>
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a  th:href="@{/customer/cart}">
+								<i class="la la-th"></i>
+								<p>Cart</p>
+								<span class="badge badge-count">6</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a  th:href="@{/customer/cart}">
+								<i class="la la-th"></i>
+								<p>Order</p>
+								<span class="badge badge-count">6</span>
+							</a>
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+			<div class="main-panel">
+				<div class="content">
+					<div class="container-fluid">
+						<div class="card">
+							<div class="row">
+								<div class="col-md-8 cart">
+									<div class="title">
+										<div class="row">
+											<div class="col"><h4><b>Food Cart</b></h4></div>
+											<div class="col align-self-center text-right text-muted" th:text="${cart.meals.size()}+' '+Items"></div>
+										</div>
+									</div>
+									<div class="row border-top border-bottom" >
+										<div class="row main align-items-center" th:each="meal : ${cart.meals}">
+											<div class="col-2"><img class="img-fluid" src="http://localhost:8080/images/f3.png"></div>
+											<div class="col">
+												<div class="row text-muted" th:text="${meal.getName()}"></div>
+												<div class="row" th:text="${meal.getName()}"></div>
+											</div>
+											<div class="col" th:text="${meal.getRestaurant().getFirstname()}"></div>
+											<div class="col" th:text="${meal.getPrice()}"> <span class="close"></span></div>
+											<a th:href="@{/customer/removefromcart/{mealId}(mealId=${meal.getId_meal()})}">
+												<span class="close">&#10005;</span>
+											</a>
+										</div>
+									</div>
+									<div class="back-to-shop"> <a th:href="@{/menu}" >&leftarrow; <span class="text-muted">Back to shop</span></a></div>
+								</div>
+								<div class="col-md-4 summary">
+									<div><h5><b>Summary</b></h5></div>
+									<hr>
+									<div class="row">
+										<div class="col" style="padding-left:0;" th:text="Items +' '+${cart.meals.size()}"></div>
+										<div class="col text-right" > </div>
+									</div>
+
+									<div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+										<div class="col">TOTAL PRICE</div>
+										<div class="col text-right" th:text="${cart.getTotal_price()}"></div>
+									</div>
+									<button class="btn">CHECKOUT</button>
+								</div>
+							</div>
+
+						</div>
+
+
+
+						</div>
+					</div>
+				</div>
+
+				<footer class="footer">
+					<div class="container-fluid">
+						<nav class="pull-left">
+							<ul class="nav">
+								<li class="nav-item">
+									<a class="nav-link" href="http://www.themekita.com">
+										ThemeKita
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">
+										Help
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="https://themewagon.com/license/#free-item">
+										Licenses
+									</a>
+								</li>
+							</ul>
+						</nav>
+						<div class="copyright ml-auto">
+							2018, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
+						</div>				
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+
+</body>
+<script src="http://localhost:8080/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="http://localhost:8080/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="http://localhost:8080/assets/js/core/popper.min.js"></script>
+<script src="http://localhost:8080/assets/js/core/bootstrap.min.js"></script>
+<script src="http://localhost:8080/assets/js/plugin/chartist/chartist.min.js"></script>
+<script src="http://localhost:8080/assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+<script src="http://localhost:8080/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="http://localhost:8080/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="http://localhost:8080/assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="http://localhost:8080/assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="http://localhost:8080/assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="http://localhost:8080/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src=http://localhost:8080/"assets/js/ready.min.js"></script>
+<script src="http://localhost:8080/assets/js/demo.js"></script>
+<script>
+	$('#displayNotif').on('click', function(){
+		var placementFrom = $('#notify_placement_from option:selected').val();
+		var placementAlign = $('#notify_placement_align option:selected').val();
+		var state = $('#notify_state option:selected').val();
+		var style = $('#notify_style option:selected').val();
+		var content = {};
+
+		content.message = 'Turning standard Bootstrap alerts into "notify" like notifications';
+		content.title = 'Bootstrap notify';
+		if (style == "withicon") {
+			content.icon = 'la la-bell';
+		} else {
+			content.icon = 'none';
+		}
+		content.url = 'index.html';
+		content.target = '_blank';
+
+		$.notify(content,{
+			type: state,
+			placement: {
+				from: placementFrom,
+				align: placementAlign
+			},
+			time: 1000,
+		});
+	});
+</script>
+<script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+<script type='text/javascript' src='#'></script>
+<script type='text/javascript' src='#'></script>
+<script type='text/javascript' src='#'></script>
+<script type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
+myLink.addEventListener('click', function(e) {
+	e.preventDefault();
+});</script>
+</html>

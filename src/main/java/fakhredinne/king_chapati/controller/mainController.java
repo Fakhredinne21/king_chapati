@@ -1,11 +1,13 @@
 package fakhredinne.king_chapati.controller;
 
-import fakhredinne.king_chapati.config.AuthenticationRequest;
-import fakhredinne.king_chapati.config.AuthenticationResponse;
-import fakhredinne.king_chapati.config.AuthenticationService;
-import fakhredinne.king_chapati.config.RegisterRequest;
+import fakhredinne.king_chapati.models.Cart;
+import fakhredinne.king_chapati.models.Customer;
 import fakhredinne.king_chapati.models.Meal;
+import fakhredinne.king_chapati.models.Role;
+import fakhredinne.king_chapati.services.CartService;
+import fakhredinne.king_chapati.services.CustomerService;
 import fakhredinne.king_chapati.services.MealService;
+import jdk.swing.interop.SwingInterOpUtils;
 import org.apache.coyote.Response;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,38 @@ public class mainController {
 
     @Autowired
     MealService mealService;
+    @Autowired
+    CustomerService customerService;
+    @Autowired
+    CartService cartService;
+    @GetMapping("/mealdetail/{mealId}")
+    public String showmeal(@PathVariable Long mealId,Model model)
+    {
+        Meal meal = mealService.findById(mealId);
+        model.addAttribute("meal",meal);
+        return "ClientSide/mealdetails";
+    }
+    @GetMapping("/login" )
+    public String login(Model model) {
+        return "login";
+    }
+    @GetMapping("/register_customer")
+    public String register(Model model) {
+        model.addAttribute("customer",new Customer());
+        return "registration";
+    }
+    @PostMapping("/register_customer")
+    public String registerUser(@ModelAttribute("customer") Customer customer) {
+        customer.setCreatedAt(java.time.LocalDateTime.now());
+        customer.setRole(Role.Customer);
+        customerService.save(customer);
+        Cart cart =new Cart();
+        cart.setCustomer(customer);
+        cartService.save(cart);
+        customer.setCart(cart);
 
+        return "redirect:/login";
+    }
 
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -31,8 +64,9 @@ public class mainController {
     {
         List<Meal> listMeals = mealService.findAll();
         model.addAttribute("listMeals",listMeals);
-        return "index";
+        return "menu";
     }
+
     /*
    form -> demandTo_add_meal
 
@@ -51,18 +85,7 @@ public class mainController {
         model.addAttribute("listMeals",listMeals);
         return "menu";
     }
-    private final AuthenticationService authenticationService=null;
 
-    @PostMapping("/register")
-    public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request){
-
-        return ResponseEntity.ok(authenticationService.register(request));
-    }
-    @PostMapping("/Login")
-    public ResponseEntity<AuthenticationResponse> register(@RequestBody AuthenticationRequest request){
-        //
-        return ResponseEntity.ok(authenticationService.authenticate(request));
-    }
 
 
 

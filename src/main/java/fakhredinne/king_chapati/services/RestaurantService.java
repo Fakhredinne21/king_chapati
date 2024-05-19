@@ -27,8 +27,9 @@ public class RestaurantService {
  /*   public List<Restaurant> findByLocation(String Location){
         return restaurantRepository.getRestaurantsByLocation(Location);
     }*/
-    public List<Meal>getMeal(Long id){
-        return mealRepository.getByRestaurant(findRestaurant(id));
+    public List<Meal>getMeal(String username){
+        Restaurant restaurant = findByUsername(username);
+        return mealRepository.getByRestaurant(findRestaurant(restaurant.getIdUser()));
     }
     public void addMeal(Meal meal){
         mealRepository.save(meal);
@@ -37,10 +38,7 @@ public class RestaurantService {
         mealRepository.delete(meal);
 
     }
-
-
-
-
-
-
+    public Restaurant findByUsername(String username) {
+        return restaurantRepository.findByUsername(username);
+    }
 }

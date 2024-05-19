@@ -16,19 +16,19 @@
   <title> King Chapati </title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="http://localhost:8080/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="http://localhost:8080/bootstrap/boostrap.css" />
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- nice select  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <!-- font awesome style -->
-  <link href="http://localhost:8080/font-awesome.min.css" rel="stylesheet" />
+  <link href="http://localhost:8080/bootstrap/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="http://localhost:8080/style.css" rel="stylesheet" />
+  <link href="http://localhost:8080/bootstrap/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="http://localhost:8080/responsive.css" rel="stylesheet" />
+  <link href="http://localhost:8080/bootstrap/responsive.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -53,6 +53,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item active">
+
                 <a class="nav-link" th:href="@{/home}">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
@@ -145,44 +146,7 @@
             <div class="container ">
               <div class="row">
                 <div class="col-md-7 col-lg-6 ">
-                  <div class="detail-box">
-                    <h1>
-                      Fast Food Restaurant
-                    </h1>
-                    <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Order Now
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item ">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7 col-lg-6 ">
-                  <div class="detail-box">
-                    <h1>
-                      Fast Food Restaurant
-                    </h1>
-                    <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Order Now
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
           <div class="carousel-item">
             <div class="container ">
               <div class="row">
@@ -212,12 +176,12 @@
             <li data-target="#customCarousel1" data-slide-to="2"></li>
           </ol>
         </div>
-      </div>
-
+        </div>
+        </div>
+        </div>
+          </div>
+        </div>
     </section>
-    <!-- end slider section -->
-  </div>
-
   <!-- offer section -->
 
   <section class="offer_section layout_padding-bottom">
@@ -234,8 +198,13 @@
                   Tasty Thursdays
                 </h5>
                 <h6>
+
+
                   <span>20%</span> Off
                 </h6>
+                <form th:action="@{/logout}" method="post">
+                  <input type="submit" value="Logout" class="btn btn-primary">
+                </form>
                 <a href="">
                   Order Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                     <g>

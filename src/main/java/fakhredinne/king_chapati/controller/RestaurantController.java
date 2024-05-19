@@ -5,6 +5,9 @@ import fakhredinne.king_chapati.models.Meal;
 import fakhredinne.king_chapati.services.RestaurantService;
 import fakhredinne.king_chapati.services.SubscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,28 +20,27 @@ public class RestaurantController {
     @Autowired
     private SubscriptionService subService;
 
-
-    @GetMapping("/addmealform/{restaurantId}")
-    public String showAddMealForm(@PathVariable Long restaurantId, Model model){
-        System.out.println(restaurantId);
+    @PreAuthorize("hasRole('3')")
+    @GetMapping("/addmealform/")
+    public String showAddMealForm( Model model){
         model.addAttribute("meal",new Meal());
-        return ("formAddMeal");
+        return ("DashboardCA/formAddMeal");
     }
     @PostMapping("/addMeal")
-    public String addMeal( @ModelAttribute("meal") Meal meal){
-        System.out.println(meal);
+    public String addMeal(@ModelAttribute("meal") Meal meal, @AuthenticationPrincipal String username){
+        meal.setRestaurant(restaurantService.findByUsername(username));
         restaurantService.addMeal(meal);
-        return "redirect:/meal/menu";
+        return "redirect:/menu";
     }
-    @GetMapping("/showmeals/{restaurantId}")
-    public String showmeals(@PathVariable Long restaurantId, Model model){
-        model.addAttribute("listMeals",restaurantService.getMeal(restaurantId));
+    @GetMapping("/showmeals/")
+    public String showmeals(Model model ,@AuthenticationPrincipal UserDetails userDetails){
+
+        model.addAttribute("listMeals",restaurantService.getMeal(userDetails.getUsername()));
         return ("menu");
     }
     @GetMapping("/subscriptions")
-    public String seeSubs(){
-
-        return ("DashboardCA/plans"
-        );
+    public String seeSubs(Model model){
+        model.addAttribute("listSub", subService.findAllSubscription() );
+        return ("DashboardCA/plans");
     }
     }

@@ -18,6 +18,7 @@ public class Customer extends User {
 
     @OneToMany(mappedBy="customer")
     private Set<Order> orders;
-
+    @OneToOne(mappedBy="customer")
+    private Cart cart;
 
 }

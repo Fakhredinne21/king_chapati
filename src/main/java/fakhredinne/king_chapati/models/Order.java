@@ -18,17 +18,10 @@ public class Order {
     @GeneratedValue
     private Integer id_order;
     private String status,destination;
-    @Column(
-            updatable = false ,nullable = false
-    )
     private LocalDateTime orderDate;
     private int total_price;
     @OneToMany(mappedBy="order")
     private Set<OrderItem> order_items;
-    @ManyToOne
-    @JoinColumn(name = "restaurant")
-    Restaurant restaurant;
-
     @ManyToOne
     @JoinColumn(name = "customer")
     Customer customer;

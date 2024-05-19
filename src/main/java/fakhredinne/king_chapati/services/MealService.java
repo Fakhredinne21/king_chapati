@@ -16,6 +16,7 @@ public class MealService {
     }
 
 
-
-
+    public Meal findById(Long restaurantId) {
+        return mealRepository.findById(restaurantId).get();
+    }
 }

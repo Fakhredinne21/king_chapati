@@ -14,6 +14,7 @@ public class OrderItem {
     @Id
     @GeneratedValue
     private Integer id_item;
+    private String status;
     private int quantity;
     @ManyToOne
             @JoinColumn(name = "Meal_id")
@@ -21,5 +22,8 @@ public class OrderItem {
     @ManyToOne
     @JoinColumn(name = "Order_id")
     Order order;
+    @ManyToOne
+    @JoinColumn(name = "restaurant")
+    Restaurant restaurant;
 
 }

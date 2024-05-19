@@ -14,7 +14,7 @@ import java.util.List;
 public class SubscriptionService {
     @Autowired
     SubscriptionRespository subscriptionRespository;
-    public List<Subscription> findAllSubscription(){
+     public List<Subscription> findAllSubscription(){
 
         return subscriptionRespository.findAll();
     }

@@ -4,7 +4,7 @@ public enum Role {
     User,
     Admin,
     Customer,
-    Resturant,
+    Restaurant,
     DeliveryAgent
 
 }
