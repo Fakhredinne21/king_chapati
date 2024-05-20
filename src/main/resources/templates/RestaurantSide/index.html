@@ -3,175 +3,12 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Ready Bootstrap Dashboard</title>
+
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 	<link rel="stylesheet" href="http://localhost:8080/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
 	<link rel="stylesheet" href="http://localhost:8080/assets/css/ready.css">
 	<link rel="stylesheet" href="http://localhost:8080/assets/css/demo.css">
-	<style>::-webkit-scrollbar {
-		width: 8px;
-	}
-	/* Track */
-	::-webkit-scrollbar-track {
-		background: #f1f1f1;
-	}
-
-	/* Handle */
-	::-webkit-scrollbar-thumb {
-		background: #888;
-	}
-
-	/* Handle on hover */
-	::-webkit-scrollbar-thumb:hover {
-		background: #555;
-	} body{
-		  background: #ddd;
-		  min-height: 100vh;
-		  vertical-align: middle;
-		  display: flex;
-		  font-family: sans-serif;
-		  font-size: 0.8rem;
-		  font-weight: bold;
-	  }
-	.title{
-		margin-bottom: 5vh;
-	}
-	.card{
-		margin: auto;
-		max-width: 950px;
-		width: 90%;
-		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		border-radius: 1rem;
-		border: transparent;
-	}
-	@media(max-width:767px){
-		.card{
-			margin: 3vh auto;
-		}
-	}
-	.cart{
-		background-color: #fff;
-		padding: 4vh 5vh;
-		border-bottom-left-radius: 1rem;
-		border-top-left-radius: 1rem;
-	}
-	@media(max-width:767px){
-		.cart{
-			padding: 4vh;
-			border-bottom-left-radius: unset;
-			border-top-right-radius: 1rem;
-		}
-	}
-	.summary{
-		background-color: #ddd;
-		border-top-right-radius: 1rem;
-		border-bottom-right-radius: 1rem;
-		padding: 4vh;
-		color: rgb(65, 65, 65);
-	}
-	@media(max-width:767px){
-		.summary{
-			border-top-right-radius: unset;
-			border-bottom-left-radius: 1rem;
-		}
-	}
-	.summary .col-2{
-		padding: 0;
-	}
-	.summary .col-10
-	{
-		padding: 0;
-	}.row{
-		 margin: 0;
-	 }
-	.title b{
-		font-size: 1.5rem;
-	}
-	.main{
-		margin: 0;
-		padding: 2vh 0;
-		width: 100%;
-	}
-	.col-2, .col{
-		padding: 0 1vh;
-	}
-	a{
-		padding: 0 1vh;
-	}
-	.close{
-		margin-left: auto;
-		font-size: 0.7rem;
-	}
-	img{
-		width: 3.5rem;
-	}
-	.back-to-shop{
-		margin-top: 4.5rem;
-	}
-	h5{
-		margin-top: 4vh;
-	}
-	hr{
-		margin-top: 1.25rem;
-	}
-	form{
-		padding: 2vh 0;
-	}
-	select{
-		border: 1px solid rgba(0, 0, 0, 0.137);
-		padding: 1.5vh 1vh;
-		margin-bottom: 4vh;
-		outline: none;
-		width: 100%;
-		background-color: rgb(247, 247, 247);
-	}
-	input{
-		border: 1px solid rgba(0, 0, 0, 0.137);
-		padding: 1vh;
-		margin-bottom: 4vh;
-		outline: none;
-		width: 100%;
-		background-color: rgb(247, 247, 247);
-	}
-	input:focus::-webkit-input-placeholder
-	{
-		color:transparent;
-	}
-	.btn{
-		background-color: #000;
-		border-color: #000;
-		color: white;
-		width: 100%;
-		font-size: 0.7rem;
-		margin-top: 4vh;
-		padding: 1vh;
-		border-radius: 0;
-	}
-	.btn:focus{
-		box-shadow: none;
-		outline: none;
-		box-shadow: none;
-		color: white;
-		-webkit-box-shadow: none;
-		-webkit-user-select: none;
-		transition: none;
-	}
-	.btn:hover{
-		color: white;
-	}
-	a{
-		color: black;
-	}
-	a:hover{
-		color: black;
-		text-decoration: none;
-	}
-	#code{
-		background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253) , rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
-		background-repeat: no-repeat;
-		background-position-x: 95%;
-		background-position-y: center;
-	}</style>
 </head>
 <body>
 	<div class="wrapper">
@@ -232,7 +69,7 @@
 										</a>
 										<a href="#">
 											<div class="notif-img"> 
-												<img src="assets/img/profile2.jpg" alt="Img Profile">
+												<img src="http://localhost:8080/assets/img/profile2.jpg" alt="Img Profile">
 											</div>
 											<div class="notif-content">
 												<span class="block">
@@ -258,14 +95,14 @@
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span >Hizrian</span></span> </a>
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span  th:text="${customer.getFirstname()}" ></span> </a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
 										<div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
 										<div class="u-text">
-											<h4>Hizrian</h4>
-											<p class="text-muted"></p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+											<h4  th:text="${customer.getFirstname()}"></h4>
+											<p class="text-muted" th:text="${customer.getEmail()}"></p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
 										</div>
 									</li>
 									<div class="dropdown-divider"></div>
@@ -293,9 +130,9 @@
 						</div>
 						<div class="info">
 							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+								<span th:text="${customer.getFirstname()}">
+
+									<span class="user-level">Customer</span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -323,24 +160,30 @@
 						</div>
 					</div>
 					<ul class="nav">
-						<li class="nav-item">
+						<li class="nav-item active">
 							<a  th:href="@{/customer}">
 								<i class="la la-dashboard"></i>
 								<p>Dashboard</p>
 								<span class="badge badge-count">5</span>
 							</a>
 						</li>
-						<li class="nav-item active">
-							<a  th:href="@{/customer/cart}">
+
+						<li class="nav-item">
+							<a th:href="@{/restaurant}">
 								<i class="la la-th"></i>
-								<p>Cart</p>
+								<p>Add Meal</p>
 								<span class="badge badge-count">6</span>
 							</a>
 						</li>
-						<li class="nav-item">
-							<a  th:href="@{/customer/orders}">
+						<li class="nav-item active">
+							<a  th:href="@{/restaurant/orders}">
 								<i class="la la-th"></i>
-								<p>Order</p>
+								<p>Orders</p>
+								<span class="badge badge-count">6</span>
+							</a>
+							<a  th:href="@{/retaurant/meals}">
+								<i class="la la-th"></i>
+								<p>Meals</p>
 								<span class="badge badge-count">6</span>
 							</a>
 						</li>
@@ -352,58 +195,176 @@
 			<div class="main-panel">
 				<div class="content">
 					<div class="container-fluid">
-
-								<div class="card">
-							<div class="row">
-								<div class="col-md-8 cart">
-									<div class="title">
+						<h4 class="page-title">Dashboard</h4>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="card card-stats card-warning">
+									<div class="card-body ">
 										<div class="row">
-											<div class="col"><h4><b>Food Cart</b></h4></div>
-											<div class="col align-self-center text-right text-muted" th:text="${cart.meals.size()}+' '+Items"></div>
-										</div>
-									</div>
-									<div class="row border-top border-bottom" >
-										<div class="row main align-items-center" th:each="meal : ${cart.meals}">
-											<div class="col-2"><img class="img-fluid" src="http://localhost:8080/images/f3.png"></div>
-											<div class="col">
-												<div class="row text-muted" th:text="${meal.getName()}"></div>
-												<div class="row" th:text="${meal.getName()}"></div>
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-users"></i>
+												</div>
 											</div>
-											<div class="col" th:text="${meal.getRestaurant().getFirstname()}"></div>
-											<div class="col" th:text="${meal.getPrice()}"> <span class="close"></span></div>
-											<a th:href="@{/customer/removefromcart/{mealId}(mealId=${meal.getId_meal()})}">
-												<span class="close">&#10005;</span>
-											</a>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Visitors</p>
+													<h4 class="card-title">1,294</h4>
+												</div>
+											</div>
 										</div>
 									</div>
-									<div class="back-to-shop"> <a th:href="@{/menu}" >&leftarrow; <span class="text-muted">Back to shop</span></a></div>
-								</div>
-								<div class="col-md-4 summary">
-									<div><h5><b>Summary</b></h5></div>
-									<hr>
-									<div class="row">
-										<div class="col" style="padding-left:0;" th:text="Items +' '+${cart.meals.size()}"></div>
-										<div class="col text-right" > </div>
-									</div>
-
-									<div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-										<div class="col">TOTAL PRICE</div>
-										<div class="col text-right" th:text="${cart.getTotal_price()}"></div>
-									</div>
-									<form th:action="@{/customer/checkout}" th:object="${cart}" method="post">
-									<button class="btn" type="submit">CHECKOUT</button>
-									</form>
 								</div>
 							</div>
+							<div class="col-md-3">
+								<div class="card card-stats card-success">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-bar-chart"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Sales</p>
+													<h4 class="card-title">$ 1,345</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats card-danger">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-newspaper-o"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Meals</p>
+													<h4 class="card-title">1303</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats card-primary">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-check-circle"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category" >Order</p>
+													<h4 class="card-title" ></h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+<!-- 							<div class="col-md-3">
+								<div class="card card-stats">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center icon-warning">
+													<i class="la la-pie-chart text-warning"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Number</p>
+													<h4 class="card-title">150GB</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats">
+									<div class="card-body ">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-bar-chart text-success"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Revenue</p>
+													<h4 class="card-title">$ 1,345</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-times-circle-o text-danger"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Errors</p>
+													<h4 class="card-title">23</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="card card-stats">
+									<div class="card-body">
+										<div class="row">
+											<div class="col-5">
+												<div class="icon-big text-center">
+													<i class="la la-heart-o text-primary"></i>
+												</div>
+											</div>
+											<div class="col-7 d-flex align-items-center">
+												<div class="numbers">
+													<p class="card-category">Followers</p>
+													<h4 class="card-title">+45K</h4>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> -->
 
-						</div>
 
 
 
+
+
+
+
+
+
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-
 				<footer class="footer">
 					<div class="container-fluid">
 						<nav class="pull-left">
@@ -426,15 +387,14 @@
 							</ul>
 						</nav>
 						<div class="copyright ml-auto">
-							2018, made with <i class="la la-heart heart text-danger"></i> by <a href="http://www.themekita.com">ThemeKita</a>
+							2024, made  by <a href="http://www.themekita.com">FC</a>
 						</div>				
 					</div>
 				</footer>
 			</div>
 		</div>
 	</div>
-</div>
-<!-- Modal -->
+	<!-- Modal -->
 
 </body>
 <script src="http://localhost:8080/assets/js/core/jquery.3.2.1.min.js"></script>
@@ -451,40 +411,4 @@
 <script src="http://localhost:8080/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 <script src=http://localhost:8080/"assets/js/ready.min.js"></script>
 <script src="http://localhost:8080/assets/js/demo.js"></script>
-<script>
-	$('#displayNotif').on('click', function(){
-		var placementFrom = $('#notify_placement_from option:selected').val();
-		var placementAlign = $('#notify_placement_align option:selected').val();
-		var state = $('#notify_state option:selected').val();
-		var style = $('#notify_style option:selected').val();
-		var content = {};
-
-		content.message = 'Turning standard Bootstrap alerts into "notify" like notifications';
-		content.title = 'Bootstrap notify';
-		if (style == "withicon") {
-			content.icon = 'la la-bell';
-		} else {
-			content.icon = 'none';
-		}
-		content.url = 'index.html';
-		content.target = '_blank';
-
-		$.notify(content,{
-			type: state,
-			placement: {
-				from: placementFrom,
-				align: placementAlign
-			},
-			time: 1000,
-		});
-	});
-</script>
-<script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
-<script type='text/javascript' src='#'></script>
-<script type='text/javascript' src='#'></script>
-<script type='text/javascript' src='#'></script>
-<script type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
-myLink.addEventListener('click', function(e) {
-	e.preventDefault();
-});</script>
 </html>

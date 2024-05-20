@@ -167,14 +167,14 @@
                         <span class="badge badge-count">5</span>
                     </a>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item active">
                     <a  th:href="@{/customer/cart}">
                         <i class="la la-th"></i>
                         <p>Cart</p>
                         <span class="badge badge-count">6</span>
                     </a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a  th:href="@{/customer/orders}">
                         <i class="la la-th"></i>
                         <p>Orders</p>
@@ -188,43 +188,47 @@
     </div>
 
 
-<div class="main-panel">
-    <div class="content">
-        <div class="container-fluid">
+    <div class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
 
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">Orders</div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">Orders</div>
+                            </div>
+                            <div class="card-body">
+
+                                <table class="table mt-3">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">order number</th>
+                                        <th scope="col">destination</th>
+                                        <th scope="col">quantity</th>
+                                        <th scope="col">status</th>
+                                        <th scope="col">total price</th>
+
+                                        <th scope="col">Date</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody th:each="order:${orders}">
+                                    <tr>
+                                        <td th:text="${order.getId_item()}"></td>
+                                        <td th:text="${order.getOrder().getDestination()}"></td>
+                                        <td th:text="${order.getQuantity()}"></td>
+                                        <td th:text="${order.getStatus()}"></td>
+                                        <td th:text="${order.getMeal().getPrice()}"></td>
+                                        <td th:text="${order.getOrder().getOrderDate()}"></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        <div class="card-body">
 
-                            <table class="table mt-3">
-                                <thead>
-                                <tr>
-                                    <th scope="col">order number</th>
-                                    <th scope="col">destination</th>
-                                    <th scope="col">order_date</th>
-                                    <th scope="col">status</th>
-                                    <th scope="col">total price</th>
-                                </tr>
-                                </thead>
-                                <tbody th:each="order:${orders}">
-                                <tr>
-                                    <td th:text="${order.getId_order()}"></td>
-                                    <td th:text="${order.getDestination()}"></td>
-                                    <td th:text="${order.getOrderDate()}"></td>
-                                    <td th:text="${order.getStatus()}"></td>
-                                    <td th:text="${order.getTotal_price()}"></td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
 
-                    </div>
 
 
 
@@ -236,20 +240,19 @@
 
 
 
-
-    <script src="http://localhost:8080/assets/js/core/jquery.3.2.1.min.js"></script>
-    <script src="http://localhost:8080/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="http://localhost:8080/assets/js/core/popper.min.js"></script>
-    <script src="http://localhost:8080/assets/js/core/bootstrap.min.js"></script>
-    <script src="http://localhost:8080/assets/js/plugin/chartist/chartist.min.js"></script>
-    <script src="http://localhost:8080/assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
-    <script src="http://localhost:8080/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-    <script src="http://localhost:8080/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-    <script src="http://localhost:8080/assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
-    <script src="http://localhost:8080/assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
-    <script src="http://localhost:8080/assets/js/plugin/chart-circle/circles.min.js"></script>
-    <script src="http://localhost:8080/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-    <script src=http://localhost:8080/"assets/js/ready.min.js"></script>
-    <script src="http://localhost:8080/assets/js/demo.js"></script>
+                    <script src="http://localhost:8080/assets/js/core/jquery.3.2.1.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/core/popper.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/core/bootstrap.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/plugin/chartist/chartist.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/plugin/chart-circle/circles.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+                    <script src=http://localhost:8080/"assets/js/ready.min.js"></script>
+                    <script src="http://localhost:8080/assets/js/demo.js"></script>
 </body>
 </html>

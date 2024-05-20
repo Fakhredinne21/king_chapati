@@ -27,13 +27,15 @@ public class RestaurantService {
  /*   public List<Restaurant> findByLocation(String Location){
         return restaurantRepository.getRestaurantsByLocation(Location);
     }*/
+    public void save(Restaurant restaurant) {
+        restaurantRepository.save(restaurant);
+    }
+
     public List<Meal>getMeal(String username){
         Restaurant restaurant = findByUsername(username);
         return mealRepository.getByRestaurant(findRestaurant(restaurant.getIdUser()));
     }
-    public void addMeal(Meal meal){
-        mealRepository.save(meal);
-    }
+
     public void deleteMeal(Meal meal){
         mealRepository.delete(meal);
 

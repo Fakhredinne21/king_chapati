@@ -21,7 +21,7 @@ public class Cart {
             inverseJoinColumns = @JoinColumn(name = "meal_id")
     )
     private List<Meal> meals;
-    private int total_price;
+    private int total_price=0;
 
     @OneToOne
     @JoinColumn(name = "customer_id")

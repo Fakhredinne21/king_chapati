@@ -2,6 +2,9 @@ package fakhredinne.king_chapati.controller;
 
 
 import fakhredinne.king_chapati.models.Meal;
+import fakhredinne.king_chapati.models.OrderItem;
+import fakhredinne.king_chapati.services.MealService;
+import fakhredinne.king_chapati.services.OrderItemService;
 import fakhredinne.king_chapati.services.RestaurantService;
 import fakhredinne.king_chapati.services.SubscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,17 +22,26 @@ public class RestaurantController {
     private RestaurantService restaurantService;
     @Autowired
     private SubscriptionService subService;
+    @Autowired
+    private MealService mealService;
 
     @PreAuthorize("hasRole('3')")
-    @GetMapping("/addmealform/")
-    public String showAddMealForm( Model model){
-        model.addAttribute("meal",new Meal());
-        return ("DashboardCA/formAddMeal");
+    @GetMapping("/addmealform/{id_restaurant}")
+    public String showAddMealForm( @PathVariable Long id_restaurant, Model model){
+        Meal meal = new Meal();
+        meal.setRestaurant(restaurantService.findRestaurant(id_restaurant));
+        model.addAttribute("meal",meal);
+        return ("RestaurantSide/formAddMeal");
     }
-    @PostMapping("/addMeal")
-    public String addMeal(@ModelAttribute("meal") Meal meal, @AuthenticationPrincipal String username){
-        meal.setRestaurant(restaurantService.findByUsername(username));
-        restaurantService.addMeal(meal);
+    @GetMapping("/{id_restaurant}")
+    public String index(Model model , @PathVariable Long id_restaurant){
+        model.addAttribute("customer",restaurantService.findRestaurant(id_restaurant));
+        return ("RestaurantSide/index");
+    }
+    @PostMapping("/addMeal/")
+    public String addMeal(@ModelAttribute("meal") Meal meal ){
+
+       mealService.save(meal);
         return "redirect:/menu";
     }
     @GetMapping("/showmeals/")
@@ -41,6 +53,13 @@ public class RestaurantController {
     @GetMapping("/subscriptions")
     public String seeSubs(Model model){
         model.addAttribute("listSub", subService.findAllSubscription() );
-        return ("DashboardCA/plans");
+        return ("RestaurantSide/plans");
     }
+    @GetMapping("/orders/{id_restaurant}")
+    public String seeorders(Model model, @PathVariable Long id_restaurant){
+        model.addAttribute("customer",restaurantService.findRestaurant(id_restaurant));
+        model.addAttribute("orders", restaurantService.findRestaurant(id_restaurant).getOrders()  );
+        return ("RestaurantSide/orders");
+    }
+
     }

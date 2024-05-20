@@ -23,7 +23,7 @@ public class  User  {
     private Long idUser;
 
     private String username;
-
+    private String address;
     private String password;
     private String firstname;
     private String lastname;

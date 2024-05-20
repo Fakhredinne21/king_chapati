@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,13 +17,13 @@ import java.util.Set;
 
 public class Order {
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id_order;
     private String status,destination;
     private LocalDateTime orderDate;
     private int total_price;
     @OneToMany(mappedBy="order")
-    private Set<OrderItem> order_items;
+    private List<OrderItem> order_items=new ArrayList<>();
     @ManyToOne
     @JoinColumn(name = "customer")
     Customer customer;
@@ -29,9 +31,5 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "delivAgent")
     DeliveryAgent delivAgent;
-
-
-
-
 
 }

@@ -12,7 +12,7 @@ import lombok.ToString;
 @ToString
 public class OrderItem {
     @Id
-    @GeneratedValue
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id_item;
     private String status;
     private int quantity;

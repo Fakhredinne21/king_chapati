@@ -14,7 +14,9 @@ public class MealService {
     public List<Meal> findAll() {
         return mealRepository.findAll();
     }
-
+        public void save(Meal meal) {
+        mealRepository.save(meal);
+        }
 
     public Meal findById(Long restaurantId) {
         return mealRepository.findById(restaurantId).get();
